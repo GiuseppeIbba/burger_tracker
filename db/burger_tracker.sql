@@ -6,19 +6,21 @@ DROP TABLE if exists eateries;
 CREATE TABLE eateries (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
-  LOCATION VARCHAR(255)
+  location VARCHAR(255)
 );
 
 CREATE TABLE burgers (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
-  price INT8,
+  price FLOAT(1),
   eatery_id SERIAL8 REFERENCES eateries(id)
 );
 
 CREATE TABLE deals (
   id SERIAL8 PRIMARY KEY,
   label VARCHAR(255),
+  type VARCHAR(255),
   day VARCHAR(10),
-  burger_id SERIAL8 REFERENCES burgers(id)
+  price FLOAT(1),
+  burger_id INT8 REFERENCES burgers(id)
 );

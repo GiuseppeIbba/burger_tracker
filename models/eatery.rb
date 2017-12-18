@@ -2,12 +2,36 @@ require_relative('../db/sql_runner')
 
 class Eatery
 
-  attr_reader :id, :name, :location
+  attr_reader :id
+  attr_accessor :name, :location
 
   def initialize(options)
     @id = options['id'].to_i if options['id'].to_i
     @name = options['name']
     @location = options['location']
+  end
+
+
+  def self.find(id)
+    sql = "SELECT * FROM eateries
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return Eatery.new( results.first )
+  end
+
+  def self.all()
+    sql = "SELECT * FROM eateries"
+    values = []
+    eateries = SqlRunner.run(sql, values)
+    result = eateries.map { |eatery| Eatery.new( eatery )}
+    return result
+  end
+
+  def self.delete_all
+    sql = "DELETE FROM eateries"
+    values = []
+    SqlRunner.run(sql, values)
   end
 
 
@@ -31,19 +55,6 @@ class Eatery
     values = [@name, @location, @id]
     SqlRunner.run(sql, values)
   end
-
-
-
-  def self.all()
-    sql = "SELECT * FROM eateries"
-    values = []
-    eateries = SqlRunner.run( sql values )
-    result = eateries.map { |eatery| Eatery.new( eatery )}
-    return result
-  end
-
-
-
 
 
 
