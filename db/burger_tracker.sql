@@ -21,6 +21,5 @@ CREATE TABLE deals (
   label VARCHAR(255),
   type VARCHAR(255),
   day VARCHAR(10),
-  price FLOAT(1),
   burger_id INT8 REFERENCES burgers(id)
 );

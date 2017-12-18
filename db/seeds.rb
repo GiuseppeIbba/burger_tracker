@@ -124,9 +124,19 @@ burger45 = Burger.new({'name' => 'Rat Burger', 'price' => '3.0', 'eatery_id' => 
 burger45.save
 
 
-#
-# deal1 = Deal.new({'label' => 'Cheesy Deal', 'type' => 'BOGOF', 'day' => 'Monday', 'price' => '', 'burger_id' => burger2.id})
-# deal1.save
+
+deal1 = Deal.new({'label' => 'Cheesy Deal', 'type' => '50', 'day' => 'Monday', 'burger_id' => burger2.id})
+deal1.save
+deal2 = Deal.new({'label' => 'Cheesy Deal', 'type' => '50', 'day' => 'Monday', 'burger_id' => burger5.id})
+deal2.save
+deal3 = Deal.new({'label' => 'Cheesy Deal', 'type' => '50', 'day' => 'Wednesday', 'burger_id' => burger2.id})
+deal3.save
+deal4 = Deal.new({'label' => 'Cheesy Deal', 'type' => '50', 'day' => 'Wednesday', 'burger_id' => burger5.id})
+deal4.save
+deal5 = Deal.new({'label' => 'Cheesy Deal', 'type' => '50', 'day' => 'Saturday', 'burger_id' => burger2.id})
+deal5.save
+deal6 = Deal.new({'label' => 'Cheesy Deal', 'type' => '50', 'day' => 'Saturday', 'burger_id' => burger5.id})
+deal6.save
 
 
 

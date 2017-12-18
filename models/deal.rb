@@ -11,11 +11,9 @@ class Deal
     @label = options['label']
     @type = options['type']
     @day = options['day']
-    @price = options['price'].to_i if options['price'].to_i
+    # @price = options['price'].to_i if options['price'].to_i
     @burger_id = options['burger_id'] if options['burger_id']
   end
-
-
 
 
 
@@ -62,9 +60,9 @@ class Deal
     sql = "INSERT INTO deals
     (label, type, day, price, burger_id)
     VALUES
-    ($1, $2, $3, $4, $5)
+    ($1, $2, $3, $4)
     RETURNING *"
-    values = [@label, @type, @day, @price, @burger_id]
+    values = [@label, @type, @day, @burger_id]
     deal_hash = SqlRunner.run(sql, values)
     @id = deal_hash.first()['id'].to_i
   end
@@ -73,15 +71,12 @@ class Deal
   def update()
     sql = "UPDATE deals SET
     (label, type, day, price, burger_id) =
-    ($1, $2, $3, $4, $5)
-    WHERE id = $6"
-    values = [@label, @type, @day, @price, @burger_id, @id]
+    ($1, $2, $3, $4)
+    WHERE id = $5"
+    values = [@label, @type, @day, @burger_id, @id]
     SqlRunner.run(sql, values)
   end
 
-  def price_by_type()
-
-  end
 
 
 
