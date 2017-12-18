@@ -58,7 +58,7 @@ class Deal
 
   def save()
     sql = "INSERT INTO deals
-    (label, type, day, price, burger_id)
+    (label, type, day, burger_id)
     VALUES
     ($1, $2, $3, $4)
     RETURNING *"
@@ -70,7 +70,7 @@ class Deal
 
   def update()
     sql = "UPDATE deals SET
-    (label, type, day, price, burger_id) =
+    (label, type, day, burger_id) =
     ($1, $2, $3, $4)
     WHERE id = $5"
     values = [@label, @type, @day, @burger_id, @id]

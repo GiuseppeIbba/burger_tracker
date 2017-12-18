@@ -1,0 +1,6 @@
+<% @burgers.each do |burger| %>
+<p> Name: <%= burger.name() %></p>
+<p> Price: <%= burger.price() %></p>
+<p>  <a href="burgers/<%= burger.id %>">IMG</a> </p>
+<hr />
+<% end %>
