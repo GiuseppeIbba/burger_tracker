@@ -32,11 +32,11 @@ end
 
 post '/burgers/:id' do # update
   Burger.new( params ).update
-  redirect to '/burgers'
+  redirect to '/eateries'
 end
 
 post '/burgers/:id/delete' do # delete
   burger = Burger.find( params[:id] )
   burger.delete()
-  redirect to '/burgers'
+  redirect to '/eateries'
 end

@@ -21,5 +21,6 @@ CREATE TABLE deals (
   label VARCHAR(255),
   type VARCHAR(255),
   day VARCHAR(10),
-  burger_id INT8 REFERENCES burgers(id) ON DELETE CASCADE
+  burger_id SERIAL8 REFERENCES burgers(id) ON DELETE CASCADE,
+  eatery_id SERIAL8 REFERENCES eateries(id) ON DELETE CASCADE
 );

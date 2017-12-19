@@ -125,18 +125,59 @@ burger45.save
 
 
 
-deal1 = Deal.new({'label' => 'Cheesy Deal', 'type' => '50', 'day' => 'Monday', 'burger_id' => burger2.id})
+deal1 = Deal.new({'label' => 'Cheesy Deal', 'type' => '50', 'day' => 'Monday', 'eatery_id' => eatery1.id, 'burger_id' => burger2.id})
 deal1.save
-deal2 = Deal.new({'label' => 'Cheesy Deal', 'type' => '50', 'day' => 'Monday', 'burger_id' => burger5.id})
+deal2 = Deal.new({'label' => 'Cheesy Deal', 'type' => '50', 'day' => 'Monday', 'eatery_id' => eatery1.id, 'burger_id' => burger5.id})
 deal2.save
-deal3 = Deal.new({'label' => 'Cheesy Deal', 'type' => '50', 'day' => 'Wednesday', 'burger_id' => burger2.id})
+deal3 = Deal.new({'label' => 'Two for One Tuesday Deal', 'type' => '50', 'day' => 'Tuesday', 'eatery_id' => eatery2.id, 'burger_id' => burger10.id})
 deal3.save
-deal4 = Deal.new({'label' => 'Cheesy Deal', 'type' => '50', 'day' => 'Wednesday', 'burger_id' => burger5.id})
+deal4 = Deal.new({'label' => 'Two for One Tuesday Deal', 'type' => '50', 'day' => 'Tuesday', 'eatery_id' => eatery2.id, 'burger_id' => burger6.id})
 deal4.save
-deal5 = Deal.new({'label' => 'Cheesy Deal', 'type' => '50', 'day' => 'Saturday', 'burger_id' => burger2.id})
+deal5 = Deal.new({'label' => 'Meat the Deal', 'type' => '50', 'day' => 'Friday', 'eatery_id' => eatery3.id, 'burger_id' => burger13.id})
 deal5.save
-deal6 = Deal.new({'label' => 'Cheesy Deal', 'type' => '50', 'day' => 'Saturday', 'burger_id' => burger5.id})
+deal6 = Deal.new({'label' => 'Meat the Deal', 'type' => '50', 'day' => 'Friday', 'eatery_id' => eatery3.id, 'burger_id' => burger14.id})
 deal6.save
+deal7 = Deal.new({'label' => 'Meat the Deal', 'type' => '50', 'day' => 'Friday', 'eatery_id' => eatery4.id, 'burger_id' => burger15.id})
+deal7.save
+deal8 = Deal.new({'label' => 'Meat the Deal', 'type' => '50', 'day' => 'Friday', 'eatery_id' => eatery4.id, 'burger_id' => burger17.id})
+deal8.save
+deal9 = Deal.new({'label' => 'Meat the Deal', 'type' => '50', 'day' => 'Friday', 'eatery_id' => eatery4.id, 'burger_id' => burger16.id})
+deal9.save
+deal10 = Deal.new({'label' => 'Meat the Deal', 'type' => '50', 'day' => 'Friday', 'eatery_id' => eatery5.id, 'burger_id' => burger24.id})
+deal10.save
+deal11 = Deal.new({'label' => 'Meat the Deal', 'type' => '50', 'day' => 'Friday', 'eatery_id' => eatery5.id, 'burger_id' => burger22.id})
+deal11.save
+deal12= Deal.new({'label' => 'Meat the Deal', 'type' => '50', 'day' => 'Friday', 'eatery_id' => eatery6.id, 'burger_id' => burger25.id})
+deal12.save
+deal13= Deal.new({'label' => 'Meat the Deal', 'type' => '50', 'day' => 'Friday', 'eatery_id' => eatery6.id, 'burger_id' => burger26.id})
+deal13.save
+deal14= Deal.new({'label' => 'Meat the Deal', 'type' => '50', 'day' => 'Friday', 'eatery_id' => eatery7.id, 'burger_id' => burger34.id})
+deal14.save
+deal15= Deal.new({'label' => 'Meat the Deal', 'type' => '50', 'day' => 'Friday', 'eatery_id' => eatery7.id, 'burger_id' => burger31.id})
+deal15.save
+deal16 = Deal.new({'label' => 'Meat the Deal', 'type' => '50', 'day' => 'Friday', 'eatery_id' => eatery7.id, 'burger_id' => burger32.id})
+deal16.save
+deal17 = Deal.new({'label' => 'Meat the Deal', 'type' => '50', 'day' => 'Friday', 'eatery_id' => eatery7.id, 'burger_id' => burger33.id})
+deal17.save
+deal18 = Deal.new({'label' => 'Meat the Deal', 'type' => '50', 'day' => 'Friday', 'eatery_id' => eatery8.id, 'burger_id' => burger38.id})
+deal18.save
+deal19 = Deal.new({'label' => 'Meat the Deal', 'type' => '50', 'day' => 'Friday', 'eatery_id' => eatery8.id, 'burger_id' => burger39.id})
+deal19.save
+deal20 = Deal.new({'label' => 'Rare Deal', 'type' => '50', 'day' => 'Friday', 'eatery_id' => eatery9.id, 'burger_id' => burger42.id})
+deal20.save
+deal21 = Deal.new({'label' => 'Meow Deal', 'type' => '50', 'day' => 'Friday', 'eatery_id' => eatery9.id, 'burger_id' => burger43.id})
+deal21.save
+
+# deal2 = Deal.new({'label' => 'Cheesy Deal', 'type' => '50', 'day' => 'Monday', 'burger_id' => burger5.id})
+# deal2.save
+# deal3 = Deal.new({'label' => 'Cheesy Deal', 'type' => '50', 'day' => 'Wednesday', 'burger_id' => burger2.id})
+# deal3.save
+# deal4 = Deal.new({'label' => 'Cheesy Deal', 'type' => '50', 'day' => 'Wednesday', 'burger_id' => burger5.id})
+# deal4.save
+# deal5 = Deal.new({'label' => 'Cheesy Deal', 'type' => '50', 'day' => 'Saturday', 'burger_id' => burger2.id})
+# deal5.save
+# deal6 = Deal.new({'label' => 'Cheesy Deal', 'type' => '50', 'day' => 'Saturday', 'burger_id' => burger5.id})
+# deal6.save
 
 
 

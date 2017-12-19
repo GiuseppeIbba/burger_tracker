@@ -1,9 +1,10 @@
 require_relative('../db/sql_runner')
 
+
 class Deal
 
 
-  attr_reader :id, :burger_id
+  attr_reader :id, :burger_id, :eatery_id
   attr_accessor :label, :type, :day
 
   def initialize(options)
@@ -11,7 +12,9 @@ class Deal
     @label = options['label']
     @type = options['type']
     @day = options['day']
-    @burger_id = options['burger_id'] if options['burger_id']
+    @eatery_id = options['eatery_id'].to_i if options['eatery_id'].to_i
+    @burger_id = options['burger_id'].to_i if options['burger_id'].to_i
+
   end
 
 
@@ -64,11 +67,11 @@ class Deal
 
   def save()
     sql = "INSERT INTO deals
-    (label, type, day, burger_id)
+    (label, type, day, eatery_id, burger_id)
     VALUES
-    ($1, $2, $3, $4)
+    ($1, $2, $3, $4, $5)
     RETURNING *"
-    values = [@label, @type, @day, @burger_id]
+    values = [@label, @type, @day, @eatery_id, @burger_id]
     deal_hash = SqlRunner.run(sql, values)
     @id = deal_hash.first()['id'].to_i
   end
@@ -76,10 +79,10 @@ class Deal
 
   def update()
     sql = "UPDATE deals SET
-    (label, type, day, burger_id) =
-    ($1, $2, $3, $4)
-    WHERE id = $5"
-    values = [@label, @type, @day, @burger_id, @id]
+    (label, type, day, eatery_id, burger_id) =
+    ($1, $2, $3, $4, $5)
+    WHERE id = $6"
+    values = [@label, @type, @day, @eatery_id, @burger_id, @id]
     SqlRunner.run(sql, values)
   end
 

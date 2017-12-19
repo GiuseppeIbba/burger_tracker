@@ -18,12 +18,21 @@
   </select>
 
 
+  <label for="eatery-select">Eateries</label>
+  <select  name="eatery_id" id="eatery-select">
+    <% @eatery.each do |eatery| %>
+    <option value="<%= eatery.id %>"><%= eatery.name %></options>
+      <% end %>
+  </select>
+
   <label for="burger_select">Burgers</label>
   <select  name="burger_id" id="burger_select">
-    <% @burgers.each do |burger| %>
+    <% burgers.each do |burger| %>
     <option value="<%= burger.id %>"><%= burger.name %></options>
       <% end %>
   </select>
+
+
 
   <input type="submit" value="Save the new edited Deal"/>
 

@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 
+
 class Burger
 
   attr_reader :id, :eatery_id
