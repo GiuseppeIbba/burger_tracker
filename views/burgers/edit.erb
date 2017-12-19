@@ -1,0 +1,17 @@
+<form action="/burgers/<%= @burger.id %>" method="POST">
+
+  <label for="name">Burger's Name:</label>
+  <input id="name" type="text" name="name" value="<%= @burger.name %>"/>
+
+  <label for="price">Burger's price:</label>
+  <input id="price" type="text" name="price" value="<%= @burger.price %>"/>
+
+  <label for="eatery_select">Eatery</label>
+  <select name="eatery_id" id="eatery_select">
+    <% @eateries.each do |eatery| %>
+    <option value="<%= eatery.id %>"><%= eatery.name %></option>
+    <% end %>
+  </select>
+
+  <input type='submit' value="Save new modified Burgerr"/>
+</form>
