@@ -21,27 +21,6 @@ class Burger
     return Burger.new( results.first )
   end
 
-  def self.find_by_name(name)
-    sql = "SELECT deals.label, deals.type FROM deals
-    WHERE deals.day = $1"
-    values = [day]
-    results = SqlRunner.run( sql, values )
-    return Deal.new( results.first )
-  end
-
-  # 
-  # SELECT deals.day, deals.label, deals.type, burgers.name FROM deals
-  # INNER JOIN burgers ON deals.burger_id = burgers.id
-  # INNER JOIN eateries ON burgers.eatery_id = eateries.id
-  # WHERE eateries.id = 1
-  #
-  # SELECT burgers.name,
-  #
-  #
-
-
-
-
   def self.all()
     sql = "SELECT * FROM burgers"
     values = []
@@ -76,5 +55,25 @@ class Burger
     values = [@name, @price, @eatery_id, @id]
     SqlRunner.run(sql, values)
   end
+
+  # def eateries()
+  #   sql = "SELECT * FROM eateries
+  #   WHERE eateries.id = $1"
+  #   values = [@eatery_id]
+  #   eateries = SqlRunner.run(sql, values)
+  #   result = eateries.map { |eatery| Burger.new(eatery)}
+  # end
+  #  #
+  #  SELECT deals.day, deals.label, deals.type, burgers.name FROM deals
+  #  INNER JOIN burgers ON deals.burger_id = burgers.id
+  #  INNER JOIN eateries ON burgers.eatery_id = eateries.id
+  #  WHERE eateries.id = 1
+  #  #
+  #  # SELECT burgers.name,
+  #  #
+  #
+  # SELECT burgers.name, burgers.price FROM burgers, eateries
+  # WHERE eateries.id;
+
 
 end

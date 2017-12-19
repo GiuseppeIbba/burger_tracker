@@ -53,7 +53,7 @@ class Deal
   def self.delete_all
     sql = "DELETE FROM deals"
     values = []
-    SqlRunner.run(sql, vaslues)
+    SqlRunner.run(sql, values)
   end
 
   def save()

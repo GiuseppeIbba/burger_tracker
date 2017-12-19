@@ -4,9 +4,9 @@ require_relative('../models/deal')
 require('pry-byebug')
 
 #
-# Burger.delete_all()
-# Eatery.delete_all()
-# Deal.delete_all()
+Burger.delete_all()
+Eatery.delete_all()
+Deal.delete_all()
 
 
 
@@ -36,11 +36,11 @@ burger1 = Burger.new({'name' => 'Hamburger', 'price' => '7.5', 'eatery_id' => ea
 burger1.save
 burger2 = Burger.new({'name' => 'Cheeseburger', 'price' => '8.5', 'eatery_id' => eatery1.id}) #
 burger2.save
-burger3 = Burger.new({'name' => 'Bacon burger', 'price' => '8.8', 'eatery_id' => eatery1.id})
+burger3 = Burger.new({'name' => 'Bacon Burger', 'price' => '8.8', 'eatery_id' => eatery1.id})
 burger3.save
-burger4 = Burger.new({'name' => 'Veggie burger', 'price' => '7.8', 'eatery_id' => eatery1.id})
+burger4 = Burger.new({'name' => 'Veggie Burger', 'price' => '7.8', 'eatery_id' => eatery1.id})
 burger4.save
-burger5 = Burger.new({'name' => 'Bacon cheeseburger', 'price' => '9.0', 'eatery_id' => eatery1.id}) #
+burger5 = Burger.new({'name' => 'Bacon Cheeseburger', 'price' => '9.0', 'eatery_id' => eatery1.id}) #
 burger5.save
 burger6 = Burger.new({'name' => 'Hamburger', 'price' => '7.0', 'eatery_id' => eatery2.id})
 burger6.save

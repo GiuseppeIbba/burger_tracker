@@ -34,6 +34,13 @@ class Eatery
     SqlRunner.run(sql, values)
   end
 
+  def burgers()
+    sql = "SELECT * FROM burgers
+    WHERE eatery_id = $1"
+    values = [@id]
+    burgers = SqlRunner.run(sql, values)
+    result = burgers.map { |burger| Burger.new(burger)}
+  end
 
   def save()
     sql = "INSERT INTO eateries
