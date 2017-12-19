@@ -23,3 +23,20 @@ post '/burgers' do
   @burger.save
   erb( :"burgers/create")
 end
+
+get '/burgers/:id/edit' do # edit
+  @eateries = Eatery.all()
+  @burger = Burger.find( params[:id] )
+  erb( :"burgers/edit" )
+end
+
+post '/burgers/:id' do # update
+  Burger.new( params ).update
+  redirect to '/burgers'
+end
+
+post '/burgers/:id/delete' do # delete
+  burger = Burger.find( params[:id] )
+  burger.delete()
+  redirect to '/burgers'
+end

@@ -1,4 +1,6 @@
 require_relative('../models/eatery')
+require_relative('../models/burger')
+require('pry')
 
 get '/eateries' do
   @eateries = Eatery.all()
@@ -7,6 +9,11 @@ end
 
 get '/eateries/new' do
   erb( :"eateries/new" )
+end
+
+get '/eateries/:id/show' do
+  @eatery = Eatery.find(params['id'])
+  erb( :"eateries/show" )
 end
 
 get '/eateries/:id' do

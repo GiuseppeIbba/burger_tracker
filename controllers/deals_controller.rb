@@ -22,3 +22,20 @@ post '/deals' do
   @deal.save
   erb(:"deals/create")
 end
+
+get '/deals/:id/edit' do # edit
+  @burgers = Burger.all()
+  @deal = Deal.find( params[:id] )
+  erb( :"deals/edit" )
+end
+
+post '/deals/:id' do # update
+  Deal.new( params ).update
+  redirect to '/deals'
+end
+
+post '/deals/:id/delete' do # delete
+  deal = Deal.find( params[:id] )
+  deal.delete()
+  redirect to '/deals'
+end

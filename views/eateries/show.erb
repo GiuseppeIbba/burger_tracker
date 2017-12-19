@@ -1,4 +1,7 @@
-<p>Name: <%= @eatery.name %></p>
-<p>Location: <%= @eatery.location %></p>
+<p><h4><%= @eatery.name() %> - <%= @eatery.location() %></h4></p>
 
-<p> Burgers List <% @eatery.burgers.each  %></p>
+<p><% @eatery.burgers.each do |burger| %></p>
+
+<p><h4><%= burger.name() %> - <%= burger.price() %></h4></p>
+
+<% end %>

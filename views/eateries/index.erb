@@ -1,5 +1,5 @@
 <% @eateries.each do |eatery| %>
 <p><h4><%= eatery.name() %> - <%= eatery.location() %></h4></p>
-<p>  <a href="eateries/<%= eatery.id %>">Check Our Burgers</a> </p>
+<p>  <a href="/eateries/<%= eatery.id %>/show">Check Our Burgers</a> </p>
 <hr />
 <% end %>

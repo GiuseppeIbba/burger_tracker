@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('../models/burger')
 
 class Eatery
 
@@ -48,6 +49,14 @@ class Eatery
     burgers = SqlRunner.run(sql, values)
     result = burgers.map { |burger| Burger.new(burger)}
   end
+
+  # def self.burgers(id)
+  #   sql = "SELECT * FROM burgers
+  #   WHERE eatery_id = $1"
+  #   values = [id.to_i]
+  #   burgers = SqlRunner.run(sql, values)
+  #   return burgers.map { |burger| Burger.new(burger)}
+  # end
 
   def save()
     sql = "INSERT INTO eateries
