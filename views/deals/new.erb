@@ -1,0 +1,30 @@
+<form action="/deals" method="POST">
+
+  <label for="label">Deal name:</label>
+  <input type="text" name="label" id='label'/>
+
+  <label for="type">Type of Deal:</label>
+  <input type="text" name="type" id='type'/>
+
+  <label for="day_select">Choose a day:</label>
+  <select name="day" id='day'>
+  <option> Monday </options>
+  <option> Tuesday </options>
+  <option> Wednesday </options>
+  <option> Thursday </options>
+  <option> Friday </options>
+  <option> Saturday </options>
+  <option> Sunday </options>
+  </select>
+
+
+  <label for="burger_select">Burgers</label>
+  <select  name="burger_id" id="burger_select">
+    <% @burgers.each do |burger| %>
+    <option value="<%= burger.id %>"><%= burger.name %></options>
+      <% end %>
+  </select>
+
+  <input type="submit" value="Save the new Deal"/>
+
+</form>

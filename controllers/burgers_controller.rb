@@ -1,6 +1,8 @@
 require_relative('../models/burger')
 require_relative('../models/eatery')
 require('pry')
+
+
 get '/burgers' do
   @burgers = Burger.all()
   erb( :"burgers/index" )

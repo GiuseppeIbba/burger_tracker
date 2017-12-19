@@ -4,14 +4,13 @@ class Deal
 
 
   attr_reader :id, :burger_id
-  attr_accessor :label, :type, :day, :price
+  attr_accessor :label, :type, :day
 
   def initialize(options)
     @id = options['id'].to_i if options['id'].to_i
     @label = options['label']
     @type = options['type']
     @day = options['day']
-    # @price = options['price'].to_i if options['price'].to_i
     @burger_id = options['burger_id'] if options['burger_id']
   end
 
@@ -48,6 +47,13 @@ class Deal
     deals = SqlRunner.run(sql, values)
     result = deals.map { |deal| Deal.new( deal )}
     return result
+  end
+
+  def delete()
+    sql = "DELETE FROM deals
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
   end
 
   def self.delete_all

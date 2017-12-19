@@ -19,3 +19,19 @@ post '/eateries' do
   @eatery.save
   erb( :"eateries/create" )
 end
+
+get '/eateries/:id/edit' do # edit
+  @eatery = Eatery.find( params[:id] )
+  erb( :"eateries/edit" )
+end
+
+post '/eateries/:id' do # update
+  Eatery.new( params ).update
+  redirect to '/eateries'
+end
+
+post '/eateries/:id/delete' do # delete
+  eatery = Eatery.find( params[:id] )
+  eatery.delete()
+  redirect to '/eateries'
+end
