@@ -1,4 +1,4 @@
-<form action="/burgers/<%= @burger.id %>" method="POST">
+<form action="/burgers/<%= @burger.id %>"" method="post">
 
   <label for="name">Burger's Name:</label>
   <input id="name" type="text" name="name" value="<%= @burger.name %>"/>
@@ -7,5 +7,10 @@
   <input id="price" type="text" name="price" value="<%= @burger.price %>"/>
 
 
-  <input type='submit' value="Save new modified Burgerr"/>
+<input type="hidden" name="eatery_id" value="<%= @burger.eatery_id %>"/>
+
+
+
+
+<input type='submit' value="Save new modified Burger"/>
 </form>

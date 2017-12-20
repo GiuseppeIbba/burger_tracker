@@ -1,7 +1,7 @@
 <% @eateries.each do |eatery| %>
 <p><h4><%= eatery.name() %> - <%= eatery.location() %></h4></p>
 <div>
-  <form method="get" action="/eateries/<%= eatery.id %>/show">
+  <form method="get" action="/eateries/<%= eatery.id %>">
     <input type="submit" value="Check Our Burgers"/>
   </form>
 </div>

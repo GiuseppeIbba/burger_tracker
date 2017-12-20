@@ -11,7 +11,7 @@ get '/eateries/new' do
   erb( :"eateries/new" )
 end
 
-get '/eateries/:id/show' do
+get '/eateries/:id' do
   @eatery = Eatery.find( params[:id] )
   erb( :"eateries/show" )
 end

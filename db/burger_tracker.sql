@@ -1,5 +1,6 @@
 DROP TABLE if exists deals;
 DROP TABLE if exists burgers;
+DROP TABLE if exists burger_deals;
 DROP TABLE if exists eateries;
 
 
@@ -24,3 +25,9 @@ CREATE TABLE deals (
   burger_id SERIAL8 REFERENCES burgers(id) ON DELETE CASCADE,
   eatery_id SERIAL8 REFERENCES eateries(id) ON DELETE CASCADE
 );
+-- 
+-- CREATE TABLE available_deals (
+--   id SERIAL8 PRIMARY KEY,
+--   label VARCHAR(255),
+--   day VARCHAR(255)
+-- );

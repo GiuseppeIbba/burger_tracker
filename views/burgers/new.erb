@@ -1,4 +1,4 @@
-<form action="/eateries/<%= @eatery.id %>/burgers" method="post">
+<form action="/burgers" method="post">
 
 
   <label for="name">Burger's Name:</label>
@@ -7,7 +7,13 @@
   <label for="price">Burger's price:</label>
   <input id="price" type="text" name="price"/>
 
-  <label for="eatery_select">Eatery</label>
+  <label for="eatery_select"> Add burger for <%= @eatery.name() %></label>
+  <!-- <select name="eatery_select" id="eatery_select">
+  <option value="<% @eatery.id %>"></option>
+</select> -->
+<input type="hidden" name="eatery_id" value="<%= @eatery.id %>"/>
 
-  <input type='submit' value="Save new burger"/>
+
+
+<input type='submit' value="Save new burger"/>
 </form>

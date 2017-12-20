@@ -1,28 +1,46 @@
 <div>
 
-<div>
-<p><h4><%= @eatery.name() %> - <%= @eatery.location() %></h4></p>
-
-<div>
-<form method="get" action="/eateries/<%= @eatery.id %>/burgers/new">
- <input type="submit" value="Add a New Burger"/>
-</form>
-</div>
-
-<p><% @eatery.burgers.each do |burger| %></p>
-
-<p><h4><%= burger.name() %> - <%= burger.price() %></h4></p>
-
-<form method="get" action="/eateries/<%= @eatery.id %>/burgers/<%= burger.id %>/edit">
-  <input type="submit" value="Edit Burger"/>
-</form>
-
-<form method="post" action="/eateries/<%= @eatery.id %>/burgers/<%= burger.id %>/delete">
- <input type="submit" value="Delete Burger"/>
-</form>
+  <div>
+    <p><h4><%= @eatery.name() %> - <%= @eatery.location() %></h4></p>
 
 
+    <div>
+      <form action="/burgers/new">
+        <input type="hidden" name="eatery_id" value="<%= @eatery.id %>">
+        <input type="submit" value="Add a New Burger"/>
+      </form>
+      <!-- <a href="/burgers/new?eatery_id=<%= @eatery.id %>">Add burger</a> -->
+    </div>
 
-<% end %>
+    <div>
+      <form action="/deals/new" method="post">
+        <input type="hidden" name="eatery_id" value="<%= @eatery.id %>">
+        <input type="submit" value="Add a Deal"/>
+      </form>
 
-</div>
+      </form>
+      
+    </div>
+
+    <p><% @eatery.burgers.each do |burger| %></p>
+
+    <p><h4><%= burger.name() %> - <%= burger.price() %></h4></p>
+
+
+
+    <a href="/burgers/?eatery_id=<%= @eatery.id %>">Add burger</a>
+
+    <form method="get" action="/burgers/<%= burger.id  %>/edit">
+      <input type="submit" value="Edit Burger"/>
+    </form>
+
+    <form method="post" action="/burgers/delete">
+      <input type="submit" value="Delete Burger"/>
+    </form>
+
+
+
+    <% end %>
+
+
+  </div>
