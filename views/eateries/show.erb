@@ -3,40 +3,26 @@
 <div>
 <p><h4><%= @eatery.name() %> - <%= @eatery.location() %></h4></p>
 
+<div>
+<form method="get" action="/eateries/<%= @eatery.id %>/burgers/new">
+ <input type="submit" value="Add a New Burger"/>
+</form>
+</div>
+
 <p><% @eatery.burgers.each do |burger| %></p>
 
 <p><h4><%= burger.name() %> - <%= burger.price() %></h4></p>
 
-</div>
-<div>
-<form method="post" action="/burgers/<%= burger.id %>/delete">
- <input type="submit" name="delete-button" value="Delete Burger"/>
+<form method="get" action="/eateries/<%= @eatery.id %>/burgers/<%= burger.id %>/edit">
+  <input type="submit" value="Edit Burger"/>
 </form>
-</div>
 
-<div>
-<form action="/burgers/<%= burger.id %>/edit">
-  <input type="submit" name="edit-button" value="Edit Burger"/>
+<form method="post" action="/eateries/<%= @eatery.id %>/burgers/<%= burger.id %>/delete">
+ <input type="submit" value="Delete Burger"/>
 </form>
-</div>
+
+
 
 <% end %>
-</div>
 
-
-
-
-<div>
-<form action="/eateries/<%= @eatery.id %>/edit">
-  <input type="submit" name="edit-button" value="Edit Eatery"/>
-</form>
-</div>
-
-
-
-
-<div>
-<form method="post" action="/eateries/<%= @eatery.id %>/delete">
-  <input type="submit" name="delete-button" value="Delete Eatery"/>
-</form>
 </div>

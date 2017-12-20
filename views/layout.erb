@@ -6,20 +6,32 @@
 </head>
 <body>
   <nav>
-    <ul>
-      <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/eateries">Restaurants</a>
-      </li>
+
+
+      <div>
+        <form method="get" action="/">
+          <input type="submit" value="Home"/>
+        </form>
+      </div>
+
+      <div>
+        <form method="get" action="/eateries">
+          <input type="submit" value="Eateries"/>
+        </form>
+      </div>
+      <div>
+        <form method="get" action="/eateries/new">
+          <input type="submit" value="Create a new Eatery"/>
+        </form>
+      </div>
+
       <!-- <li>
         <! <a href="/burgers">Choose your Burger!</a>
       </li>
       <li>
         <a href="/deals">Check the Deals!!!</a> -->
-      <!-- </li> --> 
-    </ul>
+      <!-- </li> -->
+  
   </nav>
 
 

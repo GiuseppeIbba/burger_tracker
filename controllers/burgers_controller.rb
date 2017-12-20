@@ -3,40 +3,40 @@ require_relative('../models/eatery')
 require('pry')
 
 
-get '/burgers' do
+get '/eateries/:id/burgers' do
   @burgers = Burger.all()
   erb( :"burgers/index" )
 end
 
-get '/burgers/new' do
-  @eateries = Eatery.all()
+get '/eateries/:id/burgers/new' do
+  @eatery = Eatery.find(params[:id])
   erb( :"burgers/new" )
 end
 
 get '/burgers/:id' do
-  @burger = Burger.find( params[:id] )
+  @burger = Burger.find( params[:id2] )
   erb( :"burgers/show" )
 end
 
-post '/burgers' do
-  @burger = Burger.new( params )
+post '/eateries/:eatery_id/burgers' do
+  @burger = Burger.new(params)
   @burger.save
   erb( :"burgers/create")
 end
 
-get '/burgers/:id/edit' do # edit
+get '/eateries/:id/burgers/:id2/edit' do # edit
   @eateries = Eatery.all()
-  @burger = Burger.find( params[:id] )
+  @burger = Burger.find( params[:id2] )
   erb( :"burgers/edit" )
 end
 
-post '/burgers/:id' do # update
-  Burger.new( params ).update
+post '/eateries/:id/burgers/:id2' do # update
+  Burger.new(params).update
   redirect to '/eateries'
 end
 
-post '/burgers/:id/delete' do # delete
-  burger = Burger.find( params[:id] )
+post '/eateries/:id/burgers/:id2/delete' do # delete
+  burger = Burger.find( params[:id2] )
   burger.delete()
   redirect to '/eateries'
 end

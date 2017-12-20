@@ -1,4 +1,5 @@
-<form action="/burgers" method="POST">
+<form action="/eateries/<%= @eatery.id %>/burgers" method="post">
+
 
   <label for="name">Burger's Name:</label>
   <input id="name" type="text" name="name"/>
@@ -7,11 +8,6 @@
   <input id="price" type="text" name="price"/>
 
   <label for="eatery_select">Eatery</label>
-  <select name="eatery_id" id="eatery_select">
-    <% @eateries.each do |eatery| %>
-    <option value="<%= eatery.id %>"><%= eatery.name %></option>
-    <% end %>
-  </select>
 
   <input type='submit' value="Save new burger"/>
 </form>

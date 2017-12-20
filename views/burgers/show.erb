@@ -1,4 +1,28 @@
 <div>
-<p>Name: <%= @burger.name %></p>
-<p>Price: <%= @burger.price %></p>
- </div>
+
+  <div>
+    <p><h4><%= @eatery.name() %> - <%= @eatery.location() %></h4></p>
+  </div>
+
+  <div>
+    <form action="/burgers/<%= burger.id %>/edit">
+      <input type="submit" name="edit-button" value="Edit Burger"/>
+    </form>
+  </div>
+
+  <div>
+    <p><% @eatery.burgers.each do |burger| %></p>
+
+    <p><h4><%= burger.name() %> - <%= burger.price() %></h4></p>
+
+    <form action="/burgers/<%= burger.id %>/edit">
+      <input type="submit" name="edit-button" value="Edit Burger"/>
+    </form>
+
+    <form method="post" action="/burgers/<%= burger.id %>/delete">
+      <input type="submit" name="delete-button" value="Delete Burger"/>
+    </form>
+
+    <% end %>
+  </div>
+</div>
