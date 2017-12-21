@@ -6,42 +6,50 @@
   <link <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
 
   <link rel="icon" href="/images/Burger-Food-PNG.png" />
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" type="text/css" href="/styles/buttons.css">
+  <link rel="stylesheet" type="text/css" href="/styles/forms.css">
+  <link rel="stylesheet" type="text/css" href="/styles/structure.css">
+  <link rel="stylesheet" type="text/css" href="/styles/tables.css">
 </head>
 <body>
-  <nav>
+  <header>
+    <p>Jarrod's Burger Tracker</p>
+  </header>
 
 
-      <div>
-        <form method="get" action="/">
-          <input type="submit" value="Home"/>
-        </form>
-      </div>
 
-      <div>
-        <form method="get" action="/eateries">
-          <input type="submit" value="Eateries"/>
-        </form>
-      </div>
-      <div>
-        <form method="get" action="/eateries/new">
-          <input type="submit" value="Create a new Eatery"/>
-        </form>
-      </div>
 
-      <!-- <li>
-        <! <a href="/burgers">Choose your Burger!</a>
-      </li>
-      <li>
-        <a href="/deals">Check the Deals!!!</a> -->
-      <!-- </li> -->
 
+  <nav class="flex flex--row">
+
+    <a class="button button--action" href="/" style="text-decoration:none">DEALS</a>
+
+    <a class="button button--action" href="/eateries" style="text-decoration:none">EATERIES</a>
+
+    <a class="button button--action" href="/eateries/new" style="text-decoration:none" >ADD AN EATERY</a>
   </nav>
 
+<div>
+
+</div>
 
 
 
-  <h1></h1>
 
-  <%= yield %>
+
+<!-- <li>
+<! <a href="/burgers">Choose your Burger!</a>
+</li>
+<li>
+<a href="/deals">Check the Deals!!!</a> -->
+<!-- </li> -->
+
+
+
+
+<h1></h1>
+
+<%= yield %>
 </body>
 </html>
