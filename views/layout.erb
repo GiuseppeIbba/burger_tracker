@@ -13,33 +13,32 @@
   <link rel="stylesheet" type="text/css" href="/styles/tables.css">
 </head>
 <body>
-  <header>
-    <p>Jarrod's Burger Tracker</p>
-  </header>
+  <div style="min-width: 800px; margin: 0 auto;">
+  <div class="top">
+
+
+
+    <header class="flex">
+      <p>Jarrod's Burger Tracker</p>
+    </header>
 
 
 
 
 
-  <nav class="flex flex--row">
+    <nav class="flex flex--row">
 
-    <a class="button button--action" href="/" style="text-decoration:none">DEALS</a>
+        <a class="button button--layout" href="/" style="text-decoration:none">HOME</a>
+        <a class="button button--layout" href="/eateries" style="text-decoration:none">EATERIES</a>
+        <a class="button button--layout" href="/eateries/new" style="text-decoration:none" >ADD AN EATERY</a>
 
-    <a class="button button--action" href="/eateries" style="text-decoration:none">EATERIES</a>
-
-    <a class="button button--action" href="/eateries/new" style="text-decoration:none" >ADD AN EATERY</a>
-  </nav>
-
-<div>
-
-</div>
+    </nav>
+  </div>
 
 
 
-
-
-<!-- <li>
-<! <a href="/burgers">Choose your Burger!</a>
+  <!-- <li>
+  <! <a href="/burgers">Choose your Burger!</a>
 </li>
 <li>
 <a href="/deals">Check the Deals!!!</a> -->
@@ -51,5 +50,6 @@
 <h1></h1>
 
 <%= yield %>
+</div>
 </body>
 </html>

@@ -19,7 +19,7 @@
       </form>
 
       </form>
-      
+
     </div>
 
     <p><% @eatery.burgers.each do |burger| %></p>
@@ -28,7 +28,7 @@
 
 
 
-    <a href="/burgers/?eatery_id=<%= @eatery.id %>">Add burger</a>
+  
 
     <form method="get" action="/burgers/<%= burger.id  %>/edit">
       <input type="submit" value="Edit Burger"/>

@@ -1,22 +1,66 @@
-<% @eateries.each do |eatery| %>
-<p><h4><%= eatery.name() %> - <%= eatery.location() %></h4></p>
-<div>
-  <form method="get" action="/eateries/<%= eatery.id %>">
-    <input type="submit" value="Check Our Burgers"/>
-  </form>
+
+<div class="eat_index">
+
+  <div>
+  <% @eateries.each do |eatery| %>
+  <p><h4><%= eatery.name() %> - <%= eatery.location() %></h4></p>
 </div>
 
-  <div>
-    <form method="get" action="/eateries/<%= eatery.id %>/edit">
-      <input type="submit" value="Edit Eatery"/>
-    </form>
-  </div>
+<!-- <form action="" method="post">
+    <button name="foo" value="upvote">Upvote</button>
+</form> -->
 
-  <div>
-    <form method="post" action="/eateries/<%= eatery.id %>/delete">
-      <input type="submit" value="Delete Eatery"/>
-    </form>
-  </div>
+
+
+<!-- <form action="your_url" method="post">
+  <button type="submit" name="your_name" value="your_value" class="btn-link">Go</button>
+</form>
+
+<a class="button button--layout" href="/" style="text-decoration:none">HOME</a>
+<a class="button button--layout" href="/" style="text-decoration:none">HOME</a> -->
+
+
+
+<nav class="flex flex--row">
+
+  <form action="/eateries/<%= eatery.id %>" method="get">
+    <button type="submit" name="Check Our Burgers" value="Check Our Burgers" class="mbutton mbutton--layout">Check Our Burgers</button>
+  </form>
+
+  <form action="/eateries/<%= eatery.id %>/edit" method="get">
+    <button type="submit" name="Edit Eatery" value="Edit Eatery" class="mbutton mbutton--layout">Edit Eatery</button>
+  </form>
+
+  <form action="/eateries/<%= eatery.id %>/delete" method="post">
+    <button type="submit" name="Delete Eatery" value="Delete Eatery" class="mbutton mbutton--layout">Delete Eatery</button>
+  </form>
+
+
+
+
+
+
+
+
+  <!-- <form method="get" action="/eateries/<%= eatery.id %>">
+    <input type="submit" value="Check Our Burgers"/>
+  </form> -->
+
+
+
+  <!-- <form method="get" action="/eateries/<%= eatery.id %>/edit">
+    <input type="submit" value="Edit Eatery"/>
+  </form> -->
+<!--
+
+
+  <form method="post" action="/eateries/<%= eatery.id %>/delete">
+    <input type="submit" value="Delete Eatery"/>
+  </form> -->
+
+</nav>
 
 <hr />
 <% end %>
+
+</div>
