@@ -17,7 +17,7 @@ get '/deals/new' do
 end
 
 get '/deals/:id' do
-  @deal = Deal.find( params[:id] )
+  @deals = Deal.find_deals_by_eatery( params[:id] )
   erb(:"deals/show")
 end
 

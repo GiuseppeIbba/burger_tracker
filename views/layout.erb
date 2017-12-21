@@ -3,53 +3,33 @@
 <head>
   <meta charset="utf-8">
   <title>Jarrod's Burger Tracker</title>
-  <link <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
+  <!-- <link <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
 
   <link rel="icon" href="/images/Burger-Food-PNG.png" />
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" type="text/css" href="/styles/buttons.css">
   <link rel="stylesheet" type="text/css" href="/styles/forms.css">
   <link rel="stylesheet" type="text/css" href="/styles/structure.css">
-  <link rel="stylesheet" type="text/css" href="/styles/tables.css">
+  <link rel="stylesheet" type="text/css" href="/styles/tables.css"> -->
 </head>
 <body>
   <div style="min-width: 800px; margin: 0 auto;">
-  <div class="top">
+    <div class="top">
 
+      <header class="aligned-col">
+        <p>Jarrod's Burger Tracker</p>
+      </header>
 
-
-    <header class="flex">
-      <p>Jarrod's Burger Tracker</p>
-    </header>
-
-
-
-
-
-    <nav class="flex flex--row">
-
-        <a class="button button--layout" href="/" style="text-decoration:none">HOME</a>
-        <a class="button button--layout" href="/eateries" style="text-decoration:none">EATERIES</a>
-        <a class="button button--layout" href="/eateries/new" style="text-decoration:none" >ADD AN EATERY</a>
-
-    </nav>
+      <nav class="aligned-row">
+        <a class="button" href="/" style="text-decoration:none">HOME</a>
+        <a class="button" href="/eateries" style="text-decoration:none">EATERIES</a>
+        <a class="button" href="/eateries/new" style="text-decoration:none" >ADD AN EATERY</a>
+      </nav>
+    </div>
   </div>
 
 
+    <%= yield %>
 
-  <!-- <li>
-  <! <a href="/burgers">Choose your Burger!</a>
-</li>
-<li>
-<a href="/deals">Check the Deals!!!</a> -->
-<!-- </li> -->
-
-
-
-
-<h1></h1>
-
-<%= yield %>
-</div>
-</body>
-</html>
+  </body>
+  </html>

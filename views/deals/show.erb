@@ -1,3 +1,10 @@
-<p> Name: <%= @deal.label %></p>
-<p> Type: <%= @deal.type %></p>
-<p> Available on: <%= @deal.day %></p>
+<br>
+<% for deal in @deals %>
+<br>
+<p> Name: <%= deal.label %></p>
+<p> Type: <%= deal.type %></p>
+<p> Available on: <%= deal.day %></p>
+<p> <%= Burger.find(deal.burger_id.to_i).name %></p>
+<hr/>
+<br>
+<% end %>

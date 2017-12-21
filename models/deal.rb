@@ -27,6 +27,13 @@ class Deal
     return Deal.new( results.first )
   end
 
+  def self.find_deals_by_eatery(id)
+    sql = "SELECT * FROM deals WHERE eatery_id = $1"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return results.map { |deal| Deal.new( deal )}
+  end
+
   def self.find_by_day(day)
     sql = "SELECT deals.label, deals.type FROM deals
     WHERE deals.day = $1"
@@ -88,13 +95,6 @@ class Deal
 
 
 
-
-
-  # 'SELECT deals.day, deals.label, deals.type, burgers.name FROM deals
-  # INNER JOIN burgers ON deals.burger_id = burgers.id
-  # INNER JOIN eateries ON burgers.eatery_id = eateries.id
-  # WHERE eateries.id = 1;
-  #
 
 
 end

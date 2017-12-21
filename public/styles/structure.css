@@ -1,10 +1,17 @@
-.flex {
+.aligned-col {
   display: flex;
   flex-direction: column;
 }
 
-.flex--row {
+.aligned-row {
+  display: flex;
   flex-direction: row;
+}
+
+.aligned-end {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 header {
@@ -18,7 +25,7 @@ header {
   width: 99%;
   height: 30%;
   text-align: center;
-  /* border: 3%; */
+  border: 3%;
   border-style: inset;
   border-color: gold;
   font-size: 50px;
@@ -29,4 +36,10 @@ header {
   background-color: black;
   margin: 0.1%;
   align-items: center;
+}
+
+index-eat-box {
+  background: black;
+  display: flex;
+  flex-direction: column;
 }
