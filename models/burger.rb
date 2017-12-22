@@ -54,7 +54,6 @@ class Burger
     @id = eatery_hash.first()['id'].to_i
   end
 
-
   def update()
     sql = "UPDATE burgers SET
     (name, price, eatery_id) =
@@ -71,26 +70,4 @@ class Burger
     eateries = SqlRunner.run(sql, values)
     result = eateries.map { |eatery| Eatery.new(eatery)}
   end
-
-
-  # def eateries()
-  #   sql = "SELECT * FROM eateries
-  #   WHERE eateries.id = $1"
-  #   values = [@eatery_id]
-  #   eateries = SqlRunner.run(sql, values)
-  #   result = eateries.map { |eatery| Burger.new(eatery)}
-  # end
-  #  #
-  #  SELECT deals.day, deals.label, deals.type, burgers.name FROM deals
-  #  INNER JOIN burgers ON deals.burger_id = burgers.id
-  #  INNER JOIN eateries ON burgers.eatery_id = eateries.id
-  #  WHERE eateries.id = 1
-  #  #
-  #  # SELECT burgers.name,
-  #  #
-  #
-  # SELECT burgers.name, burgers.price FROM burgers, eateries
-  # WHERE eateries.id;
-
-
 end

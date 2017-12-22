@@ -23,17 +23,17 @@ post '/burgers' do
   erb( :"burgers/create" )
 end
 
-get '/burgers/:id/edit' do # edit
+get '/burgers/:id/edit' do
   @burger = Burger.find( params[:id] )
   erb( :"burgers/edit" )
 end
 
-post '/burgers/:id' do # update
+post '/burgers/:id' do
   Burger.new( params ).update
   redirect to '/eateries'
 end
 
-post '/burgers/:id/delete' do # delete
+post '/burgers/:id/delete' do 
   burgers = Burger.find( params[:id] )
   burgers.delete()
   redirect to '/burgers'

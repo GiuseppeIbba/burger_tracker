@@ -50,14 +50,6 @@ class Eatery
     result = burgers.map { |burger| Burger.new(burger)}
   end
 
-  # def self.burgers(id)
-  #   sql = "SELECT * FROM burgers
-  #   WHERE eatery_id = $1"
-  #   values = [id.to_i]
-  #   burgers = SqlRunner.run(sql, values)
-  #   return burgers.map { |burger| Burger.new(burger)}
-  # end
-
   def save()
     sql = "INSERT INTO eateries
     (name, location)
@@ -69,7 +61,6 @@ class Eatery
     @id = eatery_hash.first()['id'].to_i
   end
 
-
   def update()
     sql = "UPDATE eateries SET
     (name, location) =
@@ -78,9 +69,4 @@ class Eatery
     values = [@name, @location, @id]
     SqlRunner.run(sql, values)
   end
-
-
-
-
-
 end

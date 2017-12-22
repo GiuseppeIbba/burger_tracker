@@ -3,7 +3,6 @@ require_relative('../db/sql_runner')
 
 class Deal
 
-
   attr_reader :id, :burger_id, :eatery_id
   attr_accessor :label, :type, :day
 
@@ -34,22 +33,6 @@ class Deal
     return results.map { |deal| Deal.new( deal )}
   end
 
-  def self.find_deals_by_day(day)
-    sql = "SELECT * FROM deals
-    WHERE deals.day = $1"
-    values = [day]
-    results = SqlRunner.run( sql, values )
-    return Deal.new( results.first )
-  end
-
-  def self.find_by_deals_by_label(label)
-    sql = "SELECT * FROM deals
-    WHERE deals.label = $1"
-    values = [label]
-    results = SqlRunner.run( sql, values )
-    return Deal.new( results.first )
-  end
-
   def self.all()
     sql = "SELECT * FROM deals"
     values = []
@@ -57,17 +40,6 @@ class Deal
     result = deals.map { |deal| Deal.new( deal )}
     return result
   end
-
-
-  def self.all()
-    sql = "SELECT * FROM deals"
-    values = []
-    deals = SqlRunner.run(sql, values)
-    result = deals.map { |deal| Deal.new( deal )}
-    return result
-  end
-
-
 
   def delete()
     sql = "DELETE FROM deals
@@ -93,7 +65,6 @@ class Deal
     @id = deal_hash.first()['id'].to_i
   end
 
-
   def update()
     sql = "UPDATE deals SET
     (label, type, day, eatery_id, burger_id) =
@@ -102,9 +73,4 @@ class Deal
     values = [@label, @type, @day, @eatery_id, @burger_id, @id]
     SqlRunner.run(sql, values)
   end
-
-
-
-
-
 end
