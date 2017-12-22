@@ -34,20 +34,28 @@ class Deal
     return results.map { |deal| Deal.new( deal )}
   end
 
-  def self.find_by_day(day)
-    sql = "SELECT deals.label, deals.type FROM deals
+  def self.find_deals_by_day(day)
+    sql = "SELECT * FROM deals
     WHERE deals.day = $1"
     values = [day]
     results = SqlRunner.run( sql, values )
     return Deal.new( results.first )
   end
 
-  def self.find_by_label(label)
-    sql = "SELECT deals.day, deals.type FROM deals
+  def self.find_by_deals_by_label(label)
+    sql = "SELECT * FROM deals
     WHERE deals.label = $1"
     values = [label]
     results = SqlRunner.run( sql, values )
     return Deal.new( results.first )
+  end
+
+  def self.all()
+    sql = "SELECT * FROM deals"
+    values = []
+    deals = SqlRunner.run(sql, values)
+    result = deals.map { |deal| Deal.new( deal )}
+    return result
   end
 
 
@@ -58,6 +66,8 @@ class Deal
     result = deals.map { |deal| Deal.new( deal )}
     return result
   end
+
+
 
   def delete()
     sql = "DELETE FROM deals

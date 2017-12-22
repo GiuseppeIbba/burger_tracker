@@ -1,0 +1,15 @@
+.forms {
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.forms2 {
+  font-size: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: right;
+}
+:focus {
+  outline-color: transparent;
+  outline-style: none;
+}

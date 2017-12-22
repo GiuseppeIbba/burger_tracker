@@ -25,7 +25,6 @@ end
 
 get '/burgers/:id/edit' do # edit
   @burger = Burger.find( params[:id] )
-  # @eatery = @burger.eatery()
   erb( :"burgers/edit" )
 end
 

@@ -1,8 +1,10 @@
+<br>
 <% @deals.each do |deal| %>
+<br>
 <p> Name: <%= deal.label() %></p>
 <p> Type: <%= deal.type() %></p>
-<p> Burger: </p>
 <p> Available on: <%= deal.day() %></p>
-<p> <a href="deals/<%= deal.id %>"></a> auz </p>
+<p> <%= Burger.find(deal.burger_id.to_i).name %></p>
 <hr />
+<br>
 <% end %>

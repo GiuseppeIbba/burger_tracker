@@ -4,7 +4,11 @@ require_relative('../models/eatery')
 
 
 get '/deals' do
-  @deals = Deal.all()
+  if params["eatery_id"]
+    @deals = Deal.find_deals_by_eatery(params["eatery_id"])
+  else
+    @deals = Deal.all()
+  end
   @eateries = Eatery.all()
   @burgers = Burger.all()
   erb( :"deals/index" )

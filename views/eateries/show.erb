@@ -1,47 +1,39 @@
-<div>
 
-  <div>
-    <p><h4><%= @eatery.name() %> - <%= @eatery.location() %></h4></p>
+<h2><%= @eatery.name() %> - <%= @eatery.location() %></h2>
 
 
-    <div>
-      <form action="/burgers/new">
-        <input type="hidden" name="eatery_id" value="<%= @eatery.id %>">
-        <input type="submit" value="Add a New Burger"/>
-      </form>
-      <!-- <a href="/burgers/new?eatery_id=<%= @eatery.id %>">Add burger</a> -->
-    </div>
 
-    <div>
-      <form action="/deals/new" method="post">
-        <input type="hidden" name="eatery_id" value="<%= @eatery.id %>">
-        <input type="submit" value="Add a Deal"/>
-      </form>
-    </div>
+<form action="/burgers/new">
+  <input type="hidden" name="eatery_id" value="<%= @eatery.id %>">
+  <button type="submit" value="Add a New Burger" class="mbutton" style="text-decoration:none">Add a new Burger</button>
+</form>
+<form action="/deals/new">
+  <input type="hidden" name="eatery_id" value="<%= @eatery.id %>">
+  <button type="submit" value="Add a Deal" class="mbutton" style="text-decoration:none">Add a new Deal</button>
+</form>
+<form action="/deals">
+  <input type="hidden" name="eatery_id" value="<%= @eatery.id %>">
+  <button type="submit" value="List Deals" class="mbutton" style="text-decoration:none">List Deals</button>
+</form>
 
 
 
 
+<% @eatery.burgers.each do |burger| %>
 
-    <p><% @eatery.burgers.each do |burger| %></p>
-
-    <p><h4><%= burger.name() %> - <%= burger.price() %></h4></p>
-
+<h4><%= burger.name() %> - <%= burger.price() %></h4>
 
 
+<form method="get" action="/burgers/<%= burger.id  %>/edit">
+  <button type="submit" value="Edit Burger" class="mbutton" style="text-decoration:none">Edit Burger</button>
+</form>
+
+<form method="post" action="/burgers/<%= burger.id  %>/delete">
+  <button type="submit" value="Delete Burger" class="mbutton" style="text-decoration:none">Delete Burgers</button>
+</form>
 
 
-    <form method="get" action="/burgers/<%= burger.id  %>/edit">
-      <input type="submit" value="Edit Burger"/>
-    </form>
-
-    <form method="post" action="/burgers/delete">
-      <input type="submit" value="Delete Burger"/>
-    </form>
+<% end %>
 
 
-
-    <% end %>
-
-
-  </div>
+</div>

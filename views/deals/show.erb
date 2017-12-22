@@ -1,5 +1,5 @@
 <br>
-<% for deal in @deals %>
+<% @deals.each do |deal| %>
 <br>
 <p> Name: <%= deal.label %></p>
 <p> Type: <%= deal.type %></p>

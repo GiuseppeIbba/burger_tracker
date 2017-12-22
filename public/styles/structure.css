@@ -1,3 +1,23 @@
+body {
+  color: papayawhip;
+  /* min-width: 1024px; */
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  font-size: 22px;
+}
+
+.layout {
+  height: 95vh;
+  width: 95vw;
+  /* width: 1024px; */
+  margin: 0 auto;
+}
+
+.layout-b {
+
+}
+
 .aligned-col {
   display: flex;
   flex-direction: column;
@@ -14,6 +34,20 @@
   justify-content: flex-end;
 }
 
+.yield {
+  background-color: black;
+  background-size: 100%;
+}
+
+.container {
+  flex-wrap: nowrap;
+}
+
+
+h1, h2, h3, h4 {
+  color: papayawhip;
+}
+
 header {
   background: black url('/images/h_burger.png');
   background-size: 100%;
@@ -21,8 +55,9 @@ header {
   color: papayawhip;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   padding: 0px;
-  margin: 0.2%;
+  margin: 0.2% auto;
   width: 99%;
+  min-width: 300px;
   height: 30%;
   text-align: center;
   border: 3%;
@@ -32,14 +67,22 @@ header {
   font-family: 'Spectral SC', serif;
 }
 
-.top {
-  background-color: black;
-  margin: 0.1%;
-  align-items: center;
+
+hr {
+  color: gold;
+ background-color: gold;
+ border-style: inset;
+ height: 2px;
+ border-color: gold;
 }
 
-index-eat-box {
-  background: black;
-  display: flex;
-  flex-direction: column;
+.main {
+  color: papayawhip;
+  background-size: 100%;
+  text-align: center;
+  margin: 3%;
+  border-style: inset;
+  border-color: gold;
 }
+
+eatery_menu

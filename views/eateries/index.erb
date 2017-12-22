@@ -1,34 +1,18 @@
-<div class="index-eat-box">
+  <% @eateries.each do |eatery| %>
+  <h2><%= eatery.name() %> - <%= eatery.location() %></h2>
 
-  <div class="ieb-33">
-    <% @eateries.each do |eatery| %>
-    <p><h4><%= eatery.name() %> - <%= eatery.location() %></h4></p>
-  </div>
 
-  <div class="ieb-66">
-    <nav class="aligned-end">
-      <form action="/eateries/<%= eatery.id %>" method="get">
-        <button type="submit" name="Check Our Burgers" value="Check Our Burgers" class="mbutton" style="text-decoration:none">Check Our Burgers</button>
-      </form>
-      <form action="/eateries/<%= eatery.id %>/edit" method="get">
-        <button type="submit" name="Edit Eatery" value="Edit Eatery" class="mbutton" style="text-decoration:none">Modify Eatery</button>
-      </form>
-      <form action="/eateries/<%= eatery.id %>/delete" method="post">
-        <button type="submit" name="Delete Eatery" value="Delete Eatery" class="mbutton" style="text-decoration:none">Delete Eatery</button>
-      </form>
-    </nav>
-  </div>
-  <!-- </nav> -->
-
-  <!-- <nav class="aligned-row">
-  <a class="mbutton mbutton--layout" href="/eateries/<%= eatery.id %>" action="/eateries/<%= eatery.id %>" style="text-decoration:none">Check Our Burgers</a>
-  <a class="mbutton mbutton--layout" href="/eateries/<%= eatery.id %>/edit" action="/eateries/<%= eatery.id %>/edit" style="text-decoration:none">Edit Eatery</a>
-</nav> -->
-</div>
-
+  <form action="/eateries/<%= eatery.id %>" method="get">
+    <button type="submit" value="Check Our Burgers" class="mbutton" style="text-decoration:none">Check Our Burgers</button>
+  </form>
+  <form action="/eateries/<%= eatery.id %>/edit" method="get">
+    <button type="submit" value="Edit Eatery" class="mbutton" style="text-decoration:none">Modify Eatery</button>
+  </form>
+  <form action="/eateries/<%= eatery.id %>/delete" method="post">
+    <button type="submit" value="Delete Eatery" class="mbutton" style="text-decoration:none">Delete Eatery</button>
+  </form>
 
 
 <hr />
 <% end %>
-
-</div>
+<hr />
